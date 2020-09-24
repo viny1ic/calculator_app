@@ -36,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
                 String n2 = N2.getText().toString().trim();
                 String oper = Operand.getText().toString().trim();
                 try{
-                    int number1 = Integer.parseInt(n1);
-                    int number2 = Integer.parseInt(n2);
-                    int opr = Integer.parseInt(oper);
+                    float number1 = Float.parseFloat(n1);
+                    float number2 = Float.parseFloat(n2);
                 }
                 catch (Exception e){
                     Answer.setText("invalid input");
                     Answer.setVisibility(View.VISIBLE);
                 }
             }
+
 
                 });
     }
