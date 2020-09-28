@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     EditText N1, Operand, N2;
     Button BtnCalculate;
     TextView Answer;
-
+    float number1, number2, ans;
 
 
     @Override
@@ -36,13 +36,33 @@ public class MainActivity extends AppCompatActivity {
                 String n2 = N2.getText().toString().trim();
                 String oper = Operand.getText().toString().trim();
                 try{
-                    float number1 = Float.parseFloat(n1);
-                    float number2 = Float.parseFloat(n2);
+                    number1 = Float.parseFloat(n1);
+                    number2 = Float.parseFloat(n2);
                 }
                 catch (Exception e){
                     Answer.setText("invalid input");
                     Answer.setVisibility(View.VISIBLE);
                 }
+                if(oper.equals("+")) {
+                    ans = number1 + number2;
+                    Answer.setText(String.valueOf(ans));
+                }
+                if(oper.equals("-")){
+                    ans = number1 - number2;
+                    Answer.setText(String.valueOf(ans));
+                }
+                if(oper.equals("*")){
+                    ans = number1 * number2;
+                    Answer.setText(String.valueOf(ans));
+                }
+                if(oper.equals("/") && number2 != 0){
+                    ans = number1 / number2;
+                    Answer.setText(String.valueOf(ans));
+                }
+                else
+                    Answer.setText(oper);
+                Answer.setVisibility(View.VISIBLE);
+
             }
 
 
