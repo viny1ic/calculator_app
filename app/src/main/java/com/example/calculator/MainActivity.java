@@ -47,20 +47,24 @@ public class MainActivity extends AppCompatActivity {
                     ans = number1 + number2;
                     Answer.setText(String.valueOf(ans));
                 }
-                if(oper.equals("-")){
+                else if(oper.equals("-")){
                     ans = number1 - number2;
                     Answer.setText(String.valueOf(ans));
                 }
-                if(oper.equals("*")){
+                else if(oper.equals("*")){
                     ans = number1 * number2;
                     Answer.setText(String.valueOf(ans));
                 }
-                if(oper.equals("/") && number2 != 0){
-                    ans = number1 / number2;
-                    Answer.setText(String.valueOf(ans));
+                else if(oper.equals("/")){
+                    if(number2==0)
+                        Answer.setText("Cannot divide by 0");
+                    else {
+                        ans = number1 / number2;
+                        Answer.setText(String.valueOf(ans));
+                    }
                 }
                 else
-                    Answer.setText(oper);
+                    Answer.setText("invalid operand");
                 Answer.setVisibility(View.VISIBLE);
 
             }
